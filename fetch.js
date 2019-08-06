@@ -464,11 +464,15 @@ export function fetch(input, init) {
     }
 
     xhr.onerror = function() {
-      reject(new TypeError('Network request failed'))
+      var error = new Error(`Network request failed: ${xhr.responseText}`)
+      error.url = request.url
+      reject(error)
     }
 
     xhr.ontimeout = function() {
-      reject(new TypeError('Network request failed'))
+      var error = new Error(`Network request timed out`)
+      error.url = request.url
+      reject(error)
     }
 
     xhr.onabort = function() {
