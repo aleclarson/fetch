@@ -4,6 +4,7 @@
   "version": "3.0.0",
   "main": "./dist/fetch.umd.js",
   "module": "./fetch.js",
+  "react-native": "./fetch.js",
   "repository": "github/fetch",
   "license": "MIT",
   "devDependencies": {
